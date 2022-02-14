@@ -94,6 +94,21 @@ resource "google_compute_firewall" "backend-healthcheck" {
   source_ranges = ["130.211.0.0/22", "35.191.0.0/16"]
 }
 
+# Firewall Rule for IAP
+resource "google_compute_firewall" "iap-firewall" {
+  name    = "iap-fw-rule"
+  network = google_compute_network.demo-vpc.name
+
+  
+  allow {
+    protocol = "tcp"
+    ports    = ["22", "3389"]
+  }
+
+  source_ranges = ["35.235.240.0/20"]
+}
+
+
 # Shared VPC
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_shared_vpc_host_project
 # A host project provides network resources to associated service projects.

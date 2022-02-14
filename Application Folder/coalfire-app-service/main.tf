@@ -29,6 +29,7 @@ resource "google_compute_instance" "instance-private" {
 resource "google_compute_instance" "instance-public" {
   name = "vm-instance-public"
   machine_type = "e2-standard-2"
+  tags = ["health-check"]
   zone = var.zone
   boot_disk {
     initialize_params {
@@ -38,13 +39,15 @@ resource "google_compute_instance" "instance-public" {
   }
   network_interface {
     network = var.shared-network
-    subnetwork =  var.subnet-public1  
+    subnetwork =  var.subnet-public1
 
     access_config {
       // Ephemeral public IP
     }
   }
 }
+
+
 
 # Health  Check for LoadBalancer (LB) Backend
 # https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_health_check
