@@ -1,1 +1,57 @@
-
+resource "google_logging_metric" "logging_metric" {
+  name   = "my-(custom)/metric"
+  filter = "resource.type=gae_app AND severity>=ERROR"
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "DISTRIBUTION"
+    unit        = "1"
+    labels {
+      key         = "mass"
+      value_type  = "STRING"
+      description = "amount of matter"
+    }
+    
+    
+    
+    resource "google_logging_metric" "logging_metric" {
+  name   = "my-(custom)/metric4"
+  filter = "resource.type=gae_app AND severity>=ERROR"
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "DISTRIBUTION"
+    unit        = "1"
+    labels {
+      key         = "mass"
+      value_type  = "STRING"
+      description = "amount of matter"
+    }
+    
+    
+    
+    resource "google_logging_metric" "logging_metric" {
+  name   = "my-(custom)/metric2"
+  filter = "resource.type=gae_app AND severity>=ERROR"
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "DISTRIBUTION"
+    unit        = "1"
+    labels {
+      key         = "mass"
+      value_type  = "STRING"
+      description = "amount of matter"
+    }
+    
+    
+    
+    resource "google_logging_metric" "logging_metric" {
+  name   = "my-(custom)/metric3"
+  filter = "resource.type=gae_app AND severity>=ERROR"
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "DISTRIBUTION"
+    unit        = "1"
+    labels {
+      key         = "mass"
+      value_type  = "STRING"
+      description = "amount of matter"
+    }
