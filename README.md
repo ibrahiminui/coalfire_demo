@@ -1,1 +1,1 @@
-**Makes Bold**(#makes-bold)
+[**Makes Bold**](#makes-bold)
